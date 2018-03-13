@@ -17,6 +17,7 @@ import org.testng.annotations.AfterTest;
 public class TestingOfHomePage {
 	private WebDriver driver;
 	private HomePageModel objHomePage;
+	private UserPageModel objUserPage;
 	private final String pathToDriver = "chromeDriver\\chromedriver.exe";
 	private final String baseUrl = "https://uk-ua.facebook.com/";
 	
@@ -25,6 +26,14 @@ public class TestingOfHomePage {
 		objHomePage = new HomePageModel(driver);
 		Assert.assertTrue(objHomePage.verifyTitle("Facebook Ч ув≥йд≥ть або зареЇструйтес€"));
 	}
+	
+	@Test(priority = 1)
+	public void testUserPageAppearCorrect() {
+		objHomePage = new HomePageModel(driver);
+		objHomePage.loginToFacebook("380968113424", "doroshchuk90697");  
+		objUserPage = new UserPageModel(driver);
+		Assert.assertTrue(objUserPage.verifyGreetingText("Ћаскаво просимо до Facebook, Daria."));
+  }
   
 	@BeforeTest(alwaysRun = true)
 	public void beforeTest() {
