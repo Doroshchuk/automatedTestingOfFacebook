@@ -32,8 +32,8 @@ public class TestingOfHomePage {
 		objHomePage = new HomePageModel(driver);
 		objHomePage.loginToFacebook("380968113424", "doroshchuk90697");  
 		objUserPage = new UserPageModel(driver);
-		Assert.assertTrue(objUserPage.verifyGreetingText("Ласкаво просимо до Facebook, Daria."));
-  }
+		Assert.assertTrue(objUserPage.verifyGreetingText("Ласкаво просимо до Facebook"));
+	}
   
 	@BeforeTest(alwaysRun = true)
 	public void beforeTest() {

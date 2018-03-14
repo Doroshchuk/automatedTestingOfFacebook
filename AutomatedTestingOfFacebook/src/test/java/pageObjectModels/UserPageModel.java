@@ -11,6 +11,9 @@ public class UserPageModel {
 	@FindBy(xpath = "//h2[@class='uiHeaderTitle']")
 	WebElement userPageGreeting;
 	
+	@FindBy(xpath = "//span[@class='_1vp5']")
+	WebElement userNameLbl;
+	
 	public UserPageModel(WebDriver driver) {
 		this.driver = driver;
 		PageFactory.initElements(this.driver, this);
@@ -21,6 +24,6 @@ public class UserPageModel {
 	}
 	
 	public boolean verifyGreetingText(String expectedGreeting) {
-		return getActualGreetingText().equalsIgnoreCase(expectedGreeting);
+		return getActualGreetingText().equalsIgnoreCase(expectedGreeting + ", " + userNameLbl.getText() + ".");
 	}
 }
