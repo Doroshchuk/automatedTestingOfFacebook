@@ -26,6 +26,9 @@ public class UserPageModel {
 	@FindBy(xpath = "//div[@id='BLUE_BAR_ID_DO_NOT_USE']//ul//li//a//span")
 	List<WebElement> menuFunctions;
 	
+	@FindBy(xpath = "//div[@id='BLUE_BAR_ID_DO_NOT_USE']")
+	WebElement menu;
+	
 	public UserPageModel(WebDriver driver) {
 		this.driver = driver;
 		wait = new WebDriverWait(this.driver, 20);
@@ -41,8 +44,9 @@ public class UserPageModel {
 	}
 	
 	public void chooseFunctionInSettingsMenu(String functionName) {
-		wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("userNavigationLabel")));
+		wait.until(ExpectedConditions.visibilityOf(settingsMenuBtn));
 		settingsMenuBtn.click();
+		wait.until(ExpectedConditions.elementToBeClickable(menu));
 		for (WebElement function: menuFunctions) {
 			if (function.getText().equalsIgnoreCase(functionName)) {
 				function.click();

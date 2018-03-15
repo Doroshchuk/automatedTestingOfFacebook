@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite guice-stage="DEVELOPMENT" name="Failed suite [Suite]">
-  <test name="Test(failed)">
+<suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
+  <test name="Default test(failed)">
     <classes>
-      <class name="application.TestingOfMainPage">
+      <class name="application.LoginToUserPageTesting">
         <methods>
-          <include name="verifyMainPageIsCorrect"/>
-          <include name="afterTest"/>
+          <include name="testExitFromUserPageIsCorrect"/>
           <include name="beforeTest"/>
+          <include name="afterTest"/>
         </methods>
-      </class> <!-- application.TestingOfMainPage -->
+      </class> <!-- application.LoginToUserPageTesting -->
     </classes>
-  </test> <!-- Test(failed) -->
-</suite> <!-- Failed suite [Suite] -->
+  </test> <!-- Default test(failed) -->
+</suite> <!-- Failed suite [Default suite] -->

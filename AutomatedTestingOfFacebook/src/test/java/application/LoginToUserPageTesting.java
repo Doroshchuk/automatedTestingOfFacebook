@@ -21,22 +21,17 @@ public class LoginToUserPageTesting {
 	
 	@Test(priority = 0)
 	public void verifyMainPageIsCorrect() {
-		objHomePage = new HomePageModel(driver);
 		Assert.assertTrue(objHomePage.verifyTitle("Facebook Ч ув≥йд≥ть або зареЇструйтес€"));
 	}
 	
 	@Test(priority = 1)
 	public void testUserPageAppearCorrect() {
-		objHomePage = new HomePageModel(driver);
 		objHomePage.loginToFacebook("380968113424", "doroshchuk90697");  
-		objUserPage = new UserPageModel(driver);
 		Assert.assertTrue(objUserPage.verifyGreetingText("Ћаскаво просимо до Facebook"));
 	}
 	
 	@Test(priority = 2)
 	public void testExitFromUserPageIsCorrect() {
-		objHomePage = new HomePageModel(driver);
-		objUserPage = new UserPageModel(driver);
 		objUserPage.chooseFunctionInSettingsMenu("¬ийти");
 		Assert.assertTrue(objHomePage.verifyTitle("Facebook Ч ув≥йд≥ть або зареЇструйтес€"));
 	}
@@ -49,6 +44,8 @@ public class LoginToUserPageTesting {
 		driver = new ChromeDriver(options);
 		driver.get(baseUrl);
 		driver.manage().window().maximize();
+		objHomePage = new HomePageModel(driver);
+		objUserPage = new UserPageModel(driver);
 	}
 
 	@AfterClass(alwaysRun = true)
