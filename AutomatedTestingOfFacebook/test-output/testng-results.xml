@@ -1,33 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="0" ignored="0" total="3" passed="3">
+<testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="33594" started-at="2018-03-15T21:03:49Z" finished-at="2018-03-15T21:04:22Z">
+  <suite name="Default suite" duration-ms="33160" started-at="2018-03-15T21:27:17Z" finished-at="2018-03-15T21:27:50Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="33594" started-at="2018-03-15T21:03:49Z" finished-at="2018-03-15T21:04:22Z">
-      <class name="application.LoginToUserPageTesting">
-        <test-method status="PASS" signature="beforeTest()[pri:0, instance:application.LoginToUserPageTesting@457e2f02]" name="beforeTest" is-config="true" duration-ms="10779" started-at="2018-03-15T23:03:49Z" finished-at="2018-03-15T23:03:59Z">
+    <test name="Default test" duration-ms="33160" started-at="2018-03-15T21:27:17Z" finished-at="2018-03-15T21:27:50Z">
+      <class name="application.LogOutFromUserPage">
+        <test-method status="PASS" signature="beforeTest()[pri:0, instance:application.LogOutFromUserPage@457e2f02]" name="beforeTest" is-config="true" duration-ms="12857" started-at="2018-03-15T23:27:17Z" finished-at="2018-03-15T23:27:29Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeTest -->
-        <test-method status="PASS" signature="verifyMainPageIsCorrect()[pri:0, instance:application.LoginToUserPageTesting@457e2f02]" name="verifyMainPageIsCorrect" duration-ms="47" started-at="2018-03-15T23:03:59Z" finished-at="2018-03-15T23:03:59Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- verifyMainPageIsCorrect -->
-        <test-method status="PASS" signature="testUserPageAppearCorrect()[pri:1, instance:application.LoginToUserPageTesting@457e2f02]" name="testUserPageAppearCorrect" duration-ms="13254" started-at="2018-03-15T23:03:59Z" finished-at="2018-03-15T23:04:13Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- testUserPageAppearCorrect -->
-        <test-method status="PASS" signature="testExitFromUserPageIsCorrect()[pri:2, instance:application.LoginToUserPageTesting@457e2f02]" name="testExitFromUserPageIsCorrect" duration-ms="7266" started-at="2018-03-15T23:04:13Z" finished-at="2018-03-15T23:04:20Z">
+        <test-method status="PASS" signature="testExitFromUserPageIsCorrect()[pri:0, instance:application.LogOutFromUserPage@457e2f02]" name="testExitFromUserPageIsCorrect" duration-ms="19834" started-at="2018-03-15T23:27:29Z" finished-at="2018-03-15T23:27:49Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testExitFromUserPageIsCorrect -->
-        <test-method status="PASS" signature="afterTest()[pri:0, instance:application.LoginToUserPageTesting@457e2f02]" name="afterTest" is-config="true" duration-ms="2195" started-at="2018-03-15T23:04:20Z" finished-at="2018-03-15T23:04:22Z">
+        <test-method status="PASS" signature="afterTest()[pri:0, instance:application.LogOutFromUserPage@457e2f02]" name="afterTest" is-config="true" duration-ms="417" started-at="2018-03-15T23:27:49Z" finished-at="2018-03-15T23:27:50Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterTest -->
-      </class> <!-- application.LoginToUserPageTesting -->
+      </class> <!-- application.LogOutFromUserPage -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>
