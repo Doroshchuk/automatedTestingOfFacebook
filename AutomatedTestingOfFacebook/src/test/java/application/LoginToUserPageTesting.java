@@ -5,16 +5,14 @@ import org.testng.annotations.Test;
 import pageObjectModels.HomePageModel;
 import pageObjectModels.UserPageModel;
 
-import org.testng.annotations.BeforeTest;
-
-import java.util.concurrent.TimeUnit;
-
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.testng.Assert;
-import org.testng.annotations.AfterTest;
+import org.testng.annotations.AfterClass;
+import org.testng.annotations.BeforeClass;
 
-public class TestingOfHomePage {
+public class LoginToUserPageTesting {
 	private WebDriver driver;
 	private HomePageModel objHomePage;
 	private UserPageModel objUserPage;
@@ -34,18 +32,27 @@ public class TestingOfHomePage {
 		objUserPage = new UserPageModel(driver);
 		Assert.assertTrue(objUserPage.verifyGreetingText("Ћаскаво просимо до Facebook"));
 	}
+	
+	@Test(priority = 2)
+	public void testExitFromUserPageIsCorrect() {
+		objHomePage = new HomePageModel(driver);
+		objUserPage = new UserPageModel(driver);
+		objUserPage.chooseFunctionInSettingsMenu("¬ийти");
+		Assert.assertTrue(objHomePage.verifyTitle("Facebook Ч ув≥йд≥ть або зареЇструйтес€"));
+	}
   
-	@BeforeTest(alwaysRun = true)
+	@BeforeClass(alwaysRun = true)
 	public void beforeTest() {
+		ChromeOptions options = new ChromeOptions();
+		options.addArguments("--disable-notifications");
 		System.setProperty("webdriver.chrome.driver", pathToDriver);
-		driver = new ChromeDriver();
+		driver = new ChromeDriver(options);
 		driver.get(baseUrl);
 		driver.manage().window().maximize();
-		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 	}
 
-	@AfterTest(alwaysRun = true)
+	@AfterClass(alwaysRun = true)
 	public void afterTest() {
-		driver.quit();
+		driver.close();
 	}
 }

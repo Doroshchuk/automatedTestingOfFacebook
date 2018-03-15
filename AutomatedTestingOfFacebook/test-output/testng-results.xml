@@ -1,29 +1,33 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="0" ignored="0" total="2" passed="2">
+<testng-results skipped="0" failed="0" ignored="0" total="3" passed="3">
   <reporter-output>
   </reporter-output>
-  <suite name="Suite" duration-ms="23235" started-at="2018-03-13T13:45:08Z" finished-at="2018-03-13T13:45:31Z">
+  <suite name="Default suite" duration-ms="30914" started-at="2018-03-15T15:47:39Z" finished-at="2018-03-15T15:48:10Z">
     <groups>
     </groups>
-    <test name="Test" duration-ms="23235" started-at="2018-03-13T13:45:08Z" finished-at="2018-03-13T13:45:31Z">
-      <class name="application.TestingOfMainPage">
-        <test-method status="PASS" signature="beforeTest()[pri:0, instance:application.TestingOfMainPage@7823a2f9]" name="beforeTest" is-config="true" duration-ms="10016" started-at="2018-03-13T15:45:08Z" finished-at="2018-03-13T15:45:18Z">
+    <test name="Default test" duration-ms="30914" started-at="2018-03-15T15:47:39Z" finished-at="2018-03-15T15:48:10Z">
+      <class name="application.LoginToUserPageTesting">
+        <test-method status="PASS" signature="beforeTest()[pri:0, instance:application.LoginToUserPageTesting@457e2f02]" name="beforeTest" is-config="true" duration-ms="11139" started-at="2018-03-15T17:47:39Z" finished-at="2018-03-15T17:47:50Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeTest -->
-        <test-method status="PASS" signature="verifyMainPageIsCorrect()[pri:0, instance:application.TestingOfMainPage@7823a2f9]" name="verifyMainPageIsCorrect" duration-ms="89" started-at="2018-03-13T15:45:18Z" finished-at="2018-03-13T15:45:18Z">
+        <test-method status="PASS" signature="verifyMainPageIsCorrect()[pri:0, instance:application.LoginToUserPageTesting@457e2f02]" name="verifyMainPageIsCorrect" duration-ms="88" started-at="2018-03-15T17:47:50Z" finished-at="2018-03-15T17:47:50Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- verifyMainPageIsCorrect -->
-        <test-method status="PASS" signature="testUserPageAppearCorrect()[pri:1, instance:application.TestingOfMainPage@7823a2f9]" name="testUserPageAppearCorrect" duration-ms="11591" started-at="2018-03-13T15:45:18Z" finished-at="2018-03-13T15:45:30Z">
+        <test-method status="PASS" signature="testUserPageAppearCorrect()[pri:1, instance:application.LoginToUserPageTesting@457e2f02]" name="testUserPageAppearCorrect" duration-ms="10120" started-at="2018-03-15T17:47:50Z" finished-at="2018-03-15T17:48:01Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testUserPageAppearCorrect -->
-        <test-method status="PASS" signature="afterTest()[pri:0, instance:application.TestingOfMainPage@7823a2f9]" name="afterTest" is-config="true" duration-ms="1485" started-at="2018-03-13T15:45:30Z" finished-at="2018-03-13T15:45:31Z">
+        <test-method status="PASS" signature="testExitFromUserPageIsCorrect()[pri:2, instance:application.LoginToUserPageTesting@457e2f02]" name="testExitFromUserPageIsCorrect" duration-ms="7317" started-at="2018-03-15T17:48:01Z" finished-at="2018-03-15T17:48:08Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testExitFromUserPageIsCorrect -->
+        <test-method status="PASS" signature="afterTest()[pri:0, instance:application.LoginToUserPageTesting@457e2f02]" name="afterTest" is-config="true" duration-ms="2159" started-at="2018-03-15T17:48:08Z" finished-at="2018-03-15T17:48:10Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterTest -->
-      </class> <!-- application.TestingOfMainPage -->
-    </test> <!-- Test -->
-  </suite> <!-- Suite -->
+      </class> <!-- application.LoginToUserPageTesting -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
 </testng-results>
