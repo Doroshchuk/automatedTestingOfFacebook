@@ -7,12 +7,12 @@ import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 
 public abstract class BasicTest {
-	public WebDriver driver;
+	protected WebDriver driver;
 	protected final String pathToDriver = "chromeDriver\\chromedriver.exe";
 	protected final String baseUrl = "https://uk-ua.facebook.com/";
 	
 	@BeforeClass(alwaysRun = true)
-	public void beforeTest() {
+	protected void beforeTest() {
 		ChromeOptions options = new ChromeOptions();
 		options.addArguments("--disable-notifications");
 		System.setProperty("webdriver.chrome.driver", pathToDriver);
@@ -22,7 +22,7 @@ public abstract class BasicTest {
 	}
 
 	@AfterClass(alwaysRun = true)
-	public void afterTest() {
+	protected void afterTest() {
 		driver.close();
 	}
 }
