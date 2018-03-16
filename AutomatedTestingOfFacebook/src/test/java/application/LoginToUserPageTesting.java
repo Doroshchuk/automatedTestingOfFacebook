@@ -1,5 +1,6 @@
 package application;
 
+import org.testng.annotations.AfterGroups;
 import org.testng.annotations.Test;
 
 import pageObjectModels.HomePageModel;
@@ -16,10 +17,15 @@ public class LoginToUserPageTesting extends BasicTest{
 		Assert.assertTrue(objHomePage.verifyTitle("Facebook Ч ув≥йд≥ть або зареЇструйтес€"));
 	}
 	
-	@Test(priority = 1)
+	@Test(priority = 1, groups = "correctLogin")
 	public void testUserPageAppearCorrect() {
 		objUserPage = new UserPageModel(driver);
 		objHomePage.loginToFacebook("380968113424", "doroshchuk90697");  
 		Assert.assertTrue(objUserPage.verifyGreetingText("Ћаскаво просимо до Facebook"));
+	}
+	
+	@AfterGroups(groups = "correctLogin")
+	public void exitFromUserPage() {
+		objUserPage.chooseFunctionInSettingsMenu("¬ийти");
 	}
 }
