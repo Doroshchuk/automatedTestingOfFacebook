@@ -33,4 +33,12 @@ public class LoginToUserPageTesting extends BasicTest{
 	public void exitFromUserPage() {
 		objUserPage.chooseFunctionInSettingsMenu("Вийти");
 	}
+	
+	@Test(priority = 2)
+	public void testLoginWithEmptyValues() {
+		objHomePage.clearEmailTF();
+		objHomePage.loginToFacebook("", "");
+		String expectedText = "Указана електронна адреса (або номер телефону) не пов'язана з жодним обліковим записом. Створіть обліковий запис.";
+		Assert.assertTrue(objHomePage.verifyTextOfMessageNearEmailTF(expectedText) && objHomePage.verifyTheBackgroundColorOfMessageBox("rgba(190, 75, 73, 1)"));
+	}
 }

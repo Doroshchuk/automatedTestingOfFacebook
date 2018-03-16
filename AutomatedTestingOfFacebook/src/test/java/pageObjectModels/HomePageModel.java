@@ -18,6 +18,9 @@ public class HomePageModel {
 	@FindBy(xpath = "//input[@value = '”‚≥ÈÚË']")
 	WebElement submitAuthorizationBtn;
 	
+	@FindBy(xpath = "//div[@class='_4rbf _53ij']")
+	WebElement messageBox;
+	
 	//WebElements of registration
 	@FindBy(xpath = "//input[@id = 'u_0_p']")
 	WebElement nameTF;
@@ -74,6 +77,23 @@ public class HomePageModel {
 	
 	public boolean verifyTitle(String expectedTitle) {
 		String actualTitle = driver.getTitle();
-		return actualTitle.equalsIgnoreCase(expectedTitle);
+		return actualTitle.equals(expectedTitle);
+	}
+	
+	private String findOutTheBackgroundColorOfElement(WebElement element) {
+		return element.getCssValue("background-color");
+	}
+	
+	public boolean verifyTheBackgroundColorOfMessageBox(String expectedColor) {
+		return findOutTheBackgroundColorOfElement(messageBox).equals(expectedColor);
+	}
+	
+	public boolean verifyTextOfMessageNearEmailTF(String expectedText) {
+		String actualText = messageBox.getText();
+		return actualText.equals(expectedText);
+	}
+	
+	public void clearEmailTF() {
+		emailTF.clear();
 	}
 }
