@@ -18,6 +18,9 @@ public class HomePageModel {
 	@FindBy(xpath = "//input[@value = '”‚≥ÈÚË']")
 	WebElement submitAuthorizationBtn;
 	
+	@FindBy(xpath = "//button[@id = 'loginbutton']")
+	WebElement repeatedAuthorizationBtn;
+	
 	@FindBy(xpath = "//div[@class='_4rbf _53ij']")
 	WebElement messageBox;
 	
@@ -65,14 +68,20 @@ public class HomePageModel {
 		passwordTF.sendKeys(passwordValue);
 	}
 	
-	private void submitAuthorization() {
-		submitAuthorizationBtn.submit();
+	private void submitAuthorization(WebElement element) {
+		element.submit();
 	}
 	
 	public void loginToFacebook(String emailAddressOrPhone, String password) {
 		setUserEmailOrPhone(emailAddressOrPhone);
 		setUserPassword(password);
-		submitAuthorization();
+		submitAuthorization(submitAuthorizationBtn);
+	}
+	
+	public void repeatedLoginToFacebook(String emailAddressOrPhone, String password) {
+		setUserEmailOrPhone(emailAddressOrPhone);
+		setUserPassword(password);
+		submitAuthorization(repeatedAuthorizationBtn);
 	}
 	
 	public boolean verifyTitle(String expectedTitle) {

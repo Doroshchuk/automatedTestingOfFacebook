@@ -5,8 +5,9 @@
     <classes>
       <class name="application.LoginToUserPageTesting">
         <methods>
+          <include name="createNecessaryObjects"/>
           <include name="beforeTest"/>
-          <include name="verifyMainPageIsCorrect"/>
+          <include name="testLoginWithIncorrectEmailAndPassword"/>
           <include name="afterTest"/>
         </methods>
       </class> <!-- application.LoginToUserPageTesting -->

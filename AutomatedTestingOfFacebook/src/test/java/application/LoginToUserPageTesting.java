@@ -41,4 +41,12 @@ public class LoginToUserPageTesting extends BasicTest{
 		String expectedText = "Указана електронна адреса (або номер телефону) не пов'язана з жодним обліковим записом. Створіть обліковий запис.";
 		Assert.assertTrue(objHomePage.verifyTextOfMessageNearEmailTF(expectedText) && objHomePage.verifyTheBackgroundColorOfMessageBox("rgba(190, 75, 73, 1)"));
 	}
+	
+	@Test(priority = 3)
+	public void testLoginWithIncorrectEmailAndPassword() {
+		objHomePage.clearEmailTF();
+		objHomePage.repeatedLoginToFacebook("30504651287", "hfgdhfkslf");
+		String expectedText = "Указана електронна адреса (або номер телефону) не пов'язана з жодним обліковим записом. Створіть обліковий запис.";
+		Assert.assertTrue(objHomePage.verifyTextOfMessageNearEmailTF(expectedText) && objHomePage.verifyTheBackgroundColorOfMessageBox("rgba(190, 75, 73, 1)"));
+	}
 }
