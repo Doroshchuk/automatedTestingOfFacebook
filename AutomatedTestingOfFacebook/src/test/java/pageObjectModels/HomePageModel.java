@@ -1,6 +1,5 @@
 package pageObjectModels;
 
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -18,12 +17,6 @@ public class HomePageModel {
 	
 	@FindBy(xpath = "//input[@value = 'Увійти']")
 	WebElement submitAuthorizationBtn;
-	
-	@FindBy(xpath = "//button[@id = 'loginbutton']")
-	WebElement repeatedAuthorizationBtn;
-	
-	@FindBy(xpath = "//div[@class='_4rbf _53ij']")
-	WebElement messageBox;
 	
 	//WebElements of registration
 	@FindBy(xpath = "//input[@id = 'u_0_p']")
@@ -56,9 +49,6 @@ public class HomePageModel {
 	@FindBy(xpath = "//button[text() = 'Створити обліковий запис']")
 	WebElement submitRegitrationBtn;
 	
-	@FindBy(xpath = "//a[contains(text(),'Забули пароль?')]")
-	WebElement hyperLink_ForgotPassword;
-	
 	public HomePageModel(WebDriver driver) {
 		this.driver = driver;
 		PageFactory.initElements(this.driver, this);
@@ -72,20 +62,10 @@ public class HomePageModel {
 		passwordTF.sendKeys(passwordValue);
 	}
 	
-	private void submitAuthorization(WebElement element) {
-		element.submit();
-	}
-	
 	public void loginToFacebook(String emailAddressOrPhone, String password) {
 		setUserEmailOrPhone(emailAddressOrPhone);
 		setUserPassword(password);
-		submitAuthorization(submitAuthorizationBtn);
-	}
-	
-	public void repeatedLoginToFacebook(String emailAddressOrPhone, String password) {
-		setUserEmailOrPhone(emailAddressOrPhone);
-		setUserPassword(password);
-		submitAuthorization(repeatedAuthorizationBtn);
+		submitAuthorizationBtn.submit();
 	}
 	
 	public boolean verifyTitle(String expectedTitle) {
@@ -93,25 +73,7 @@ public class HomePageModel {
 		return actualTitle.equals(expectedTitle);
 	}
 	
-	private String findOutTheBackgroundColorOfElement(WebElement element) {
-		System.out.println(element.getCssValue("background-color"));
-		return element.getCssValue("background-color");
-	}
-	
-	public boolean verifyTheBackgroundColorOfMessageBox(String expectedColor) {
-		return findOutTheBackgroundColorOfElement(messageBox).equals(expectedColor);
-	}
-	
-	public boolean verifyTextOfMessageNearEmailTF(String expectedText) {
-		String actualText = messageBox.getText();
-		return actualText.equals(expectedText);
-	}
-	
 	public void clearEmailTF() {
 		emailTF.clear();
-	}
-	
-	public boolean messageBoxContainsHyperLink() {
-		return hyperLink_ForgotPassword.isDisplayed();
 	}
 }

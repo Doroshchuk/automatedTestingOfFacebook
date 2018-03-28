@@ -5,6 +5,7 @@
     <classes>
       <class name="application.LoginToUserPageTesting">
         <methods>
+          <include name="testRepeatedLoginWithIncorrectPassword"/>
           <include name="createNecessaryObjects"/>
           <include name="beforeTest"/>
           <include name="testLoginWithIncorrectEmailAndPassword"/>
