@@ -54,17 +54,9 @@ public class HomePageModel {
 		PageFactory.initElements(this.driver, this);
 	}
 	
-	private void setUserEmailOrPhone(String emailAddressOrPhone) {
-		emailTF.sendKeys(emailAddressOrPhone);
-	}
-	
-	private void setUserPassword(String passwordValue) {
-		passwordTF.sendKeys(passwordValue);
-	}
-	
 	public void loginToFacebook(String emailAddressOrPhone, String password) {
-		setUserEmailOrPhone(emailAddressOrPhone);
-		setUserPassword(password);
+		emailTF.sendKeys(emailAddressOrPhone);
+		passwordTF.sendKeys(password);
 		submitAuthorizationBtn.submit();
 	}
 	
