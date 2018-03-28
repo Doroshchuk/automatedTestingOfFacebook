@@ -5,7 +5,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-public class IncorrectLoginPageModel {
+public class IncorrectLoginPageModel extends BaseLoginModel{
 	private WebDriver driver;
 	
 	//WebElements of authorization
@@ -25,16 +25,9 @@ public class IncorrectLoginPageModel {
 	WebElement repeatedAuthorizationBtn;
 	
 	public IncorrectLoginPageModel(WebDriver driver) {
+		super(driver);
 		this.driver = driver;
 		PageFactory.initElements(this.driver, this);
-	}
-	
-	private void setUserEmailOrPhone(String emailAddressOrPhone) {
-		emailTF.sendKeys(emailAddressOrPhone);
-	}
-	
-	private void setUserPassword(String passwordValue) {
-		passwordTF.sendKeys(passwordValue);
 	}
 	
 	public void repeatedLoginToFacebook(String emailAddressOrPhone, String password) {
@@ -59,9 +52,5 @@ public class IncorrectLoginPageModel {
 	public boolean verifyTextOfMessageNearEmailTF(String expectedText) {
 		String actualText = messageBox.getText();
 		return actualText.equals(expectedText);
-	}
-	
-	public void clearEmailTF() {
-		emailTF.clear();
 	}
 }

@@ -5,16 +5,10 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-public class HomePageModel {
+public class HomePageModel extends BaseLoginModel{
 	private WebDriver driver;
 	
 	//WebElements of authorization
-	@FindBy(id = "email")
-	WebElement emailTF;
-	
-	@FindBy(id = "pass")
-	WebElement passwordTF;
-	
 	@FindBy(xpath = "//input[@value = '”‚≥ÈÚË']")
 	WebElement submitAuthorizationBtn;
 	
@@ -50,16 +44,9 @@ public class HomePageModel {
 	WebElement submitRegitrationBtn;
 	
 	public HomePageModel(WebDriver driver) {
+		super(driver);
 		this.driver = driver;
 		PageFactory.initElements(this.driver, this);
-	}
-	
-	private void setUserEmailOrPhone(String emailAddressOrPhone) {
-		emailTF.sendKeys(emailAddressOrPhone);
-	}
-	
-	private void setUserPassword(String passwordValue) {
-		passwordTF.sendKeys(passwordValue);
 	}
 	
 	public void loginToFacebook(String emailAddressOrPhone, String password) {
@@ -71,9 +58,5 @@ public class HomePageModel {
 	public boolean verifyTitle(String expectedTitle) {
 		String actualTitle = driver.getTitle();
 		return actualTitle.equals(expectedTitle);
-	}
-	
-	public void clearEmailTF() {
-		emailTF.clear();
 	}
 }
