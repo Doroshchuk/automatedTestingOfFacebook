@@ -28,7 +28,7 @@ public class BaseLoginModel {
 		passwordTF.sendKeys(passwordValue);
 	}
 	
-	protected void clearEmailTF() {
+	public void clearEmailTF() {
 		emailTF.clear();
 	}
 }
