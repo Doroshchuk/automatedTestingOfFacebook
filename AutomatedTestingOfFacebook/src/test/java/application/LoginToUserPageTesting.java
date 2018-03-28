@@ -4,6 +4,8 @@ import org.testng.annotations.AfterGroups;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
+import com.sun.java_cup.internal.runtime.virtual_parse_stack;
+
 import pageObjectModels.HomePageModel;
 import pageObjectModels.UserPageModel;
 import org.testng.Assert;
@@ -48,5 +50,13 @@ public class LoginToUserPageTesting extends BasicTest{
 		objHomePage.repeatedLoginToFacebook("30504651287", "hfgdhfkslf");
 		String expectedText = "Указана електронна адреса (або номер телефону) не пов'язана з жодним обліковим записом. Створіть обліковий запис.";
 		Assert.assertTrue(objHomePage.verifyTextOfMessageNearEmailTF(expectedText) && objHomePage.verifyTheBackgroundColorOfMessageBox("rgba(190, 75, 73, 1)"));
+	}
+	
+	@Test(priority = 4)
+	public void testRepeatedLoginWithIncorrectPassword() {
+		objHomePage.clearEmailTF();
+		objHomePage.repeatedLoginToFacebook("+380968113424", "gfhdfcn");
+		String expectedText = "Ви ввели неправильний пароль. Забули пароль?";
+		Assert.assertTrue(objHomePage.verifyTextOfMessageNearEmailTF(expectedText) && objHomePage.messageBoxContainsHyperLink() && objHomePage.verifyTheBackgroundColorOfMessageBox("rgba(190, 75, 73, 1)"));
 	}
 }
