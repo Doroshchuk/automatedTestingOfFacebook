@@ -1,5 +1,6 @@
 package pageObjectModels;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -55,6 +56,9 @@ public class HomePageModel {
 	@FindBy(xpath = "//button[text() = 'Створити обліковий запис']")
 	WebElement submitRegitrationBtn;
 	
+	@FindBy(xpath = "//a[contains(text(),'Забули пароль?')]")
+	WebElement hyperLink_ForgotPassword;
+	
 	public HomePageModel(WebDriver driver) {
 		this.driver = driver;
 		PageFactory.initElements(this.driver, this);
@@ -90,6 +94,7 @@ public class HomePageModel {
 	}
 	
 	private String findOutTheBackgroundColorOfElement(WebElement element) {
+		System.out.println(element.getCssValue("background-color"));
 		return element.getCssValue("background-color");
 	}
 	
@@ -104,5 +109,9 @@ public class HomePageModel {
 	
 	public void clearEmailTF() {
 		emailTF.clear();
+	}
+	
+	public boolean messageBoxContainsHyperLink() {
+		return hyperLink_ForgotPassword.isDisplayed();
 	}
 }
