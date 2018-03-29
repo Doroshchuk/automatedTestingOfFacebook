@@ -7,6 +7,8 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class HomePageModel extends BaseLoginModel{
 	private WebDriver driver;
@@ -16,16 +18,16 @@ public class HomePageModel extends BaseLoginModel{
 	WebElement submitAuthorizationBtn;
 	
 	//WebElements of registration
-	@FindBy(xpath = "//input[@id = 'u_0_p']")
+	@FindBy(xpath = "//input[@id = 'u_0_h']")
 	WebElement nameTF;
 	
-	@FindBy(xpath = "//input[@id = 'u_0_r']")
+	@FindBy(xpath = "//input[@id = 'u_0_j']")
 	WebElement surnameTF;
 	
-	@FindBy(id = "u_0_u")
+	@FindBy(id = "u_0_m")
 	WebElement phoneNumberOrEmailTF;
 	
-	@FindBy(id = "u_0_11")
+	@FindBy(id = "u_0_t")
 	WebElement passwordForRegistrationTF;
 	
 	@FindBy(xpath = "//select[@id = 'day']")
