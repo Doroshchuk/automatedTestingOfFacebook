@@ -7,8 +7,6 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class HomePageModel extends BaseLoginModel{
 	private WebDriver driver;
@@ -69,6 +67,7 @@ public class HomePageModel extends BaseLoginModel{
 		nameTF.sendKeys(name);
 		surnameTF.sendKeys(surname);
 		phoneNumberOrEmailTF.sendKeys(phoneOrEmail);
+		passwordForRegistrationTF.sendKeys(password);
 		String dayOfBirth = dateOfBirth.split("/")[0];
 		String monthOfBirth = dateOfBirth.split("/")[1];
 		String yearOfBirth = dateOfBirth.split("/")[2];
