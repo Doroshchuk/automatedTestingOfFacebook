@@ -84,6 +84,7 @@ public class HomePageModel extends BaseLoginModel{
 		}else if (sex.equalsIgnoreCase("чоловік") || sex.equalsIgnoreCase("male") || sex.equalsIgnoreCase("мужчина")) {
 			maleRB.click();
 		}
+		submitRegitrationBtn.submit();
 	}
 	
 	private void choiceNecessaryValueInSelectField(WebElement selectField, String xPath, String rightValue) {
