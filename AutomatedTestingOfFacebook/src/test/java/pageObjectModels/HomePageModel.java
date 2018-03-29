@@ -73,25 +73,21 @@ public class HomePageModel extends BaseLoginModel{
 		String yearOfBirth = dateOfBirth.split("/")[2];
 		
 		//set up day of birth
-		birthDaySF.click();
-		List<WebElement> days = driver.findElements(By.xpath("//select[@id = 'day']//child::option"));
-		for (WebElement day: days) {
-			if (day.equals(dayOfBirth)) {
-				day.click();
-			}
-		}
-		birthMonthSF.click();
-		List<WebElement> months = driver.findElements(By.xpath("//select[@id = 'month']//child::option"));
-		for (WebElement month: months) {
-			if (month.equals(monthOfBirth)) {
-				month.click();
-			}
-		}
-		birthYearSF.click();
-		List<WebElement> years = driver.findElements(By.xpath("//select[@id = 'year']//child::option"));
-		for (WebElement year: years) {
-			if (year.equals(yearOfBirth)) {
-				year.click();
+		choiceNecessaryValueInSelectField(birthDaySF, "//select[@id = 'day']//child::option", dayOfBirth);
+		
+		//set up day of birth
+		choiceNecessaryValueInSelectField(birthMonthSF, "//select[@id = 'month']//child::option", monthOfBirth);
+		
+		//set up day of birth
+		choiceNecessaryValueInSelectField(birthYearSF, "//select[@id = 'year']//child::option", yearOfBirth);
+	}
+	
+	private void choiceNecessaryValueInSelectField(WebElement selectField, String xPath, String rightValue) {
+		selectField.click();
+		List<WebElement> listOfValues = driver.findElements(By.xpath(xPath));
+		for (WebElement value: listOfValues) {
+			if (value.equals(rightValue)) {
+				value.click();
 			}
 		}
 	}
