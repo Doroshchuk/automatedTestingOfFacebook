@@ -37,10 +37,10 @@ public class HomePageModel extends BaseLoginModel{
 	@FindBy(xpath = "//select[@id = 'year']")
 	WebElement birthYearSF;
 	
-	@FindBy(xpath = "//*[@name = 'sex' AND @value = '1']")
+	@FindBy(xpath = "//*[@name = 'sex' and @value = '1']")
 	WebElement femaleRB;
 	
-	@FindBy(xpath = "//*[@name = 'sex' AND @value = '2']")
+	@FindBy(xpath = "//*[@name = 'sex' and @value = '2']")
 	WebElement maleRB;
 	
 	@FindBy(xpath = "//button[text() = 'Створити обліковий запис']")
