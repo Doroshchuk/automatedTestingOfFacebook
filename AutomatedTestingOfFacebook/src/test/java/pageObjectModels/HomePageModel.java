@@ -5,7 +5,6 @@ import java.util.List;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.interactions.touch.UpAction;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
@@ -80,6 +79,11 @@ public class HomePageModel extends BaseLoginModel{
 		
 		//set up day of birth
 		choiceNecessaryValueInSelectField(birthYearSF, "//select[@id = 'year']//child::option", yearOfBirth);
+		if(sex.equalsIgnoreCase("жінка") || sex.equalsIgnoreCase("female") || sex.equalsIgnoreCase("женщина")) {
+			femaleRB.click();
+		}else if (sex.equalsIgnoreCase("чоловік") || sex.equalsIgnoreCase("male") || sex.equalsIgnoreCase("мужчина")) {
+			maleRB.click();
+		}
 	}
 	
 	private void choiceNecessaryValueInSelectField(WebElement selectField, String xPath, String rightValue) {
